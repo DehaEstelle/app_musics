@@ -1,1 +1,16 @@
-<h2 class="font-bold text-3xl text-center my-2">{{ title }}</h2>
+<h2 class="font-bold text-3xl text-center my-2">{{ title }} </h2>
+
+<article *ngFor="let album of albums" class="border bg-[#06202A]/75 my-5 max-w-2xl mx-auto p-2 rounded-md">
+    <div class="py-4 border-b">{{album.ref}}</div>
+    <h3 class="text-2xl text-white my-4">{{album.title}}</h3>
+    <p class="text-justify">{{album.description}}</p>
+    <ul class="flex gap-2 md:gap-4 flex-wrap mt-4">
+        <li *ngFor="let tag of album.tags" class="border px-4 py-1 rounded-lg bg-teal-700">{{tag}}</li>
+    </ul>
+    <div class="mt-5 flex gap-2 md:gap-4 items-center">
+        <button class="border border-white py-2 px-4 hover:bg-gray-300 hover:text-black rounded-md">en</button>
+        <p>{{album.like}}</p>
+        <p>{{album.duration}}</p>
+        <button class="border border-white py-2 px-4 hover:bg-gray-300 hover:text-black rounded-md">Details</button>
+    </div>
+</article>
